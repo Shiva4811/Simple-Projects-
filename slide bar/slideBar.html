@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .menu h1{
+            color: white;
+        }
+        .main{
+            height: 100vh;
+            width: 200px;
+            background-color: white;
+           transform: translateX(-200px);
+            box-shadow: 0 0 4px black;
+            transition: 0.3s ease-in;
+        }
+      input{
+        display: none;
+        visibility: hidden;
+      }
+      .toggle{
+        height: 30px;
+        width: 30px;
+        background-color: rgb(175, 171, 171 );
+        position: absolute;
+        z-index: 1;
+        top: 20px;
+        box-shadow: 0 0 8px rgba(26, 25, 25, 0.2);
+      }
+       .toggle .common{
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: black;
+        margin: 2px;
+      }
+      .main .menu h1{
+        position: absolute;
+        left: 40px;
+        top: 20px;
+      }
+      input:checked ~ .main{
+        transform: translateX(0);
+      }
+      input:checked ~  .toggle .one{
+        transform: rotate(45deg);
+        top: 12px;
+      }
+      input:checked ~ .toggle .two{
+        transform: rotate(-45deg);
+        transition: 0.2s ease-in;
+      } 
+      input:checked ~ .toggle .three{
+        transform: rotate(45deg);
+        transition: 0.4s ease-in;
+        opacity: 0;
+      } 
+      .toggle .one{
+        position: absolute;
+        top: 5px;
+        
+      }
+     
+      .toggle .two{
+        position: absolute;
+        top: 12px;
+      }
+      .toggle .three{
+        position: absolute;
+        top: 19px;
+      }
+      .list{
+        position: absolute;
+        top: 80px;
+        left: 20px;
+      }
+      .main .innerList{
+        list-style: none;
+        text-decoration: none;
+      }
+      /* .list .innerList{
+        height: 20px;
+        width: 200px;
+        box-shadow: 0 0 4px black;
+      } */
+      .main .innerList .commonList a{
+        position: absolute;
+        left: 26px;
+        text-decoration: none;
+        padding-left: 20px;
+        color: black;
+       
+      }
+      .main .innerList .commonList{
+        margin: 0;
+      }
+      .menu{
+        height: 70px;
+        width: 200px;
+       box-shadow: 0 0 4px black;
+        background-color: rgb(120, 114, 121);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .innerList .commonList{
+        width: 200px;
+       padding: 24px 0;
+      }
+      .innerList .commonList i{
+                position: absolute;
+                left: 9px;
+      }
+   .innerList .commonList:hover{
+        box-shadow: 0 0 5px black;
+   }
+   .line{
+    width: 160px;
+    height: 1px;
+    background-color: black;
+    text-align: center;
+    position: absolute;
+    margin-top: 30px;
+    left: 12px;
+   }
+.social{
+    width: 200px;
+    position: relative;
+ height: 54px;
+    margin-left: -20px;
+    padding: 20px 0;
+   top: 412px;
+   left: 20px;
+   box-shadow: 0 0 4px black;
+}   
+.social a{
+    padding-left: 20px ;
+    color: black;
+}
+  .social a i:hover{
+    box-shadow: 0 0 4px black;
+    font-size: 20px;
+    transition: 0.2s ease-in;
+  }
+  .innerList .commonList a{
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+  }
+  .para{
+    position: absolute;
+    height: 500px;
+    width: 300px;
+    top: 40px;
+    left: 400px  ;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 4px black;
+    padding: 20px;
+    background-color: rgb(236, 234, 233);
+    text-align: justify;
+    
+  }
+  .parab{
+    position: absolute;
+    height: 500px;
+    width: 300px;
+    top: 40px;
+    left: 800px  ;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 4px black;
+    padding: 20px;
+    background-color: rgb(236, 234, 233);
+    text-align: justify;
+    
+  }
+  .para:hover,.parab:hover{
+    width: 310px;
+    height: 510px;
+    padding: 20px;
+    box-shadow: 0 0 8px black;
+  }
+  .innerList .commonList:hover{
+      background-color: rgb(44, 95, 236);
+      color: white;
+  }
+  .innerList .commonList a:hover{
+      color: white;
+  }
+    </style>
+</head>
+<body>
+    <div class="para">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Molestias commodi nostrum doloribus quidem nobis quam exercitationem aspernatur ab vitae corporis deleniti facilis quaerat totam voluptas 
+            soluta temporibus ex, ipsam deserunt.</p>
+     
+    </div>
+    <div class="parab">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Molestias commodi nostrum doloribus quidem nobis quam exercitationem aspernatur ab vitae corporis deleniti facilis quaerat totam voluptas 
+            soluta temporibus ex, ipsam deserunt.</p>
+     
+    </div>
+    
+    <input type="checkbox" id="check">
+    <label class="toggle" for="check">  
+        <span class="one common"></span>
+        <span class="two common"></span>
+        <span class="three common"></span>
+         </label>
+
+    <div class="main">
+        <div class="menu">
+            <h1>Menu</h1>
+        </div>
+            <ul class="innerList">
+                <li class="commonList">
+                    <i class="fa-solid fa-house-chimney"></i>
+                    <a href="#">Home</a>
+                </li>
+                <li  class="commonList">
+                    <i class="fa-regular fa-image"></i>
+                    <a href="#">Gallery</a>
+                </li>
+                <li  class="commonList">
+                    <i class="fa-regular fa-address-book"></i>
+                    <a href="#">Contacts</a>
+
+                </li>
+                <li  class="commonList">
+                    <i class="fa-regular fa-address-card"></i>
+                    <a href="#">Help</a>
+                </li>
+            </ul>
+            <div class="lineOuter">
+        <div class="line"></div>
+    </div>
+    <div class="social">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a> 
+       <a href="#"> <i class="fa-brands fa-twitter"></i></a>
+       <a href="#"> <i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+    </div>
+</body>
+</html>
